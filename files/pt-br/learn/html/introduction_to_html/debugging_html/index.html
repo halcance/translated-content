@@ -132,18 +132,18 @@ original_slug: Aprender/HTML/Introducao_ao_HTML/Debugging_HTML
 
 <h4 id="Interpretando_as_mensagens_de_erros">Interpretando as mensagens de erros</h4>
 
-<p>As mensagens de erros geralmente são úteis, mas algumas vezes elas não ajudam tanto; com um pouco de prática você pode descobrir como interpretar-lás para arrumar o seu código. Vamos dar uma olhada nas mensagens de erros e ver o que elas significam. Você verá que cada mensagem vem com um numero para a linha e um para a coluna afim de ajudar você a localizar o erro facilmente.</p>
+<p>As mensagens de erros geralmente são úteis, mas algumas vezes elas não ajudam tanto; com um pouco de prática você pode descobrir como interpretar-lás para arrumar o seu código. Vamos dar uma olhada nas mensagens de erros e ver o que elas significam. Você verá que cada mensagem vem com um número para a linha e um para a coluna afim de ajudar você a localizar o erro facilmente.</p>
 
 <ul>
- <li>"End tag <code>li</code> implied, but there were open elements" (2 instances): Estas mensagens indicam que um elemento que esta aberto deveria estar fechado. O final da tag esta implicito, mas não esta realmente lá. A informação de linha/coluna indica para a primeira linha depois de onde a tag de fechamento realmente deveria estar, mas isto é uma pista boa o suficiente para ver o que há de errado.</li>
+ <li>"Fechamento da tag <code>li</code> implied, but there were open elements" (2 instances): Estas mensagens indicam que um elemento que esta aberto deveria estar fechado. O final da tag esta implicito, mas não esta realmente lá. A informação de linha/coluna indica para a primeira linha depois de onde a tag de fechamento realmente deveria estar, mas isto é uma pista boa o suficiente para ver o que há de errado.</li>
  <li>"Unclosed element <code>strong</code>": Este é muito fácil de entender — um {{htmlelement("strong")}} elemento esta aberto, e uma informação de linha/coluna indica diretamente para onde esta.</li>
  <li>"End tag <code>strong</code> violates nesting rules": Este aponta os elementos incorretamente aninhados, e a informação de linha/coluna aponta onde o erro está.</li>
- <li>"End of file reached when inside an attribute value. Ignoring tag": This one is rather cryptic; it refers to the fact that there is an attribute value not properly formed somewhere, possibly near the end of the file because the end of the file appears inside the attribute value. The fact that the browser doesn't render the link should give us a good clue as to what element is at fault.</li>
- <li>"End of file seen and there were open elements": This is a bit ambiguous, but basically refers to the fact there are open elements that need to be properly closed. The lines numbers point to the last few lines of the file, and this error message comes with a line of code that points out an example of an open element:
-  <pre class="notranslate">example: &lt;a href="https://www.mozilla.org/&gt;link to Mozilla homepage&lt;/a&gt; ↩ &lt;/ul&gt;↩ &lt;/body&gt;↩&lt;/html&gt;</pre>
+ <li>"End of file reached when inside an attribute value. Ignoring tag": Essa é mais enigmática; se refere ao fato de que há um valor do atributo formado indevidamente em algum lugar, possivelmente próximo ao fim do arquivo porquê o fim do arquivo aparece dentro do valor do atributo. O fato de o navegador não renderizar o link deveria nos dar uma boa pista de qual elemento está em falta.</li>
+ <li>"End of file seen and there were open elements": Essa é um pouco ambígua, mas basicamente se refere ao fato de que há elementos em aberto que devem ser fechados devidamente. A linha de números aponta para as últimas linhas do arquivo, e esta mensagem de erro vem com uma linha do código que aponta um exemplo de um elemento em aberto:
+  <pre class="notranslate">Exemplo: &lt;a href="https://www.mozilla.org/&gt;link to Mozilla homepage&lt;/a&gt; ↩ &lt;/ul&gt;↩ &lt;/body&gt;↩&lt;/html&gt;</pre>
 
   <div class="note">
-  <p><strong>Note</strong>: An attribute missing a closing quote can result in an open element because the rest of the document is interpreted as the attribute's content.</p>
+  <p><strong>Note</strong>: Um atributo faltando uma aspas pode resultar em um elemento aberto porque o resto do documento é interpretado como conteúdo do atributo.</p>
   </div>
  </li>
  <li>"Unclosed element <code>ul</code>": This is not very helpful, as the {{htmlelement("ul")}} element <em>is</em> closed correctly. This error comes up because the {{htmlelement("a")}} element is not closed, due to the missing closing quote mark.</li>
